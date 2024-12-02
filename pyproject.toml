@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "rs-enums"
+version = "0.1.0"
+description = "rs_enums is a Python module inspired by Rust's powerful Option and Result enums."
+authors = ["Kubanychbek uulu Kairat <kubanychbekukairat@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
