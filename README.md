@@ -1,5 +1,7 @@
 # rs_enums
 
+[![Pylint](https://github.com/ImKairat/rs_enums/actions/workflows/pylint.yml/badge.svg)](https://github.com/ImKairat/rs_enums/actions/workflows/pylint.yml)
+
 `rs_enums` is a Python module inspired by Rust’s `Option` and `Result` enums. It provides functional programming constructs for handling optional values (`Option`) and results (`Result`) with success or error outcomes. This module enables safer and more expressive code by allowing you to work with values that may or may not exist, or operations that may succeed or fail. 
 ### Features include:
 - **`Option`**: Represents a value that may or may not be present (`Some` or `None`).
