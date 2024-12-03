@@ -61,4 +61,3 @@ class Option(Some):
                 raise RuntimeError(message)
             case _:
                 return self.value
-            
