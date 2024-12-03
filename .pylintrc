@@ -1,0 +1,6 @@
+   [MASTER]
+   ignore=tests
+   ignored-modules=pytest
+
+   [MESSAGES CONTROL]
+   disable=import-error

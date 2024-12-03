@@ -1,8 +1,11 @@
-import pytest  # type: ignore
+"""
+This module contains fixtures for testing the Option class from rs_enums.
+"""
 import random
+import pytest_lazyfixture   # type: ignore
 
 
-@pytest.fixture
+@pytest_lazyfixture.fixture
 def generate_random_data():
     """Generate list from 1000 random data of various types."""
     data_types = [
@@ -15,8 +18,6 @@ def generate_random_data():
         lambda: None
     ]
     result = []
-    
-    for i in range(1000):
+    for _ in range(1000):
         result.append(random.choice(data_types))
-    
     return result

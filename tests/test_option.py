@@ -1,14 +1,12 @@
-import sys
+"""
+This module contains tests for the Option class from rs_enums.
+"""
 import os
-import pytest  # type: ignore
-sys.path.append(
-    os.path.dirname(
-        os.path.dirname(
-            os.path.abspath(__file__)
-            )
-        )
-    )
-from rs_enums.option import *
+import sys
+import pytest_lazyfixture   # type: ignore
+from rs_enums import Option
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 
 def test_new(generate_random_data):
     """
@@ -21,16 +19,15 @@ def test_new(generate_random_data):
     for i in generate_random_data:
         x = Option(i)
         if i is None:
-            with pytest.raises(RuntimeError) as exc_info:
-                x.expect("Some error")     
+            with pytest_lazyfixture.raises(RuntimeError) as exc_info:
+                x.expect("Some error")
                 assert str(exc_info.value) == "Some error"
-            
-            with pytest.raises(RuntimeError) as exc_info:
-                x.unwrap()     
+            with pytest_lazyfixture.raises(RuntimeError) as exc_info:
+                x.unwrap()
                 assert str(exc_info.value) == ""
         else:
             assert x.expect("Some error") == i
             assert x.unwrap() == i
+        assert x.is_none() == (i is None)
+        assert x.is_some() == (i is not None)
         
-        assert x.is_none() == (True if i is None else False)
-        assert x.is_some() == (True if i is not None else False)
