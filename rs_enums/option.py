@@ -13,6 +13,14 @@ class Some:
     def __init__(self, value: Any) -> None:
         self.value: Any = value
 
+    def get_value(self) -> Any:
+        """Return the stored value."""
+        return self.value
+
+    def is_present(self) -> bool:
+        """Check if the value is present."""
+        return self.value is not None
+
 class Option(Some):
     """
     This class represents an optional value that can be either present (Some) 
