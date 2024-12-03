@@ -30,4 +30,3 @@ def test_new(generate_random_data):
             assert x.unwrap() == i
         assert x.is_none() == (i is None)
         assert x.is_some() == (i is not None)
-        
