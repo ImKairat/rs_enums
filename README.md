@@ -1,6 +1,8 @@
 # rs_enums
 
-[![Done](https://img.shields.io/badge/Pylint-Done-brightgreen)](https://github.com/ImKairat/rs_enums/actions/workflows/pylint.yml)
+[![Pylint Status](https://github.com/ImKairat/rs_enums/actions/workflows/pylint.yml/badge.svg)](https://github.com/ImKairat/rs_enums/actions/workflows/pylint.yml)
+[![Pytest Status](https://github.com/ImKairat/rs_enums/actions/workflows/pytest.yml/badge.svg)](https://github.com/ImKairat/rs_enums/actions/workflows/pytest.yml)
+
 
 
 
