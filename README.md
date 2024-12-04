@@ -2,6 +2,8 @@
 
 [![Pylint Status](https://github.com/ImKairat/rs_enums/actions/workflows/pylint.yml/badge.svg)](https://github.com/ImKairat/rs_enums/actions/workflows/pylint.yml)
 [![Pytest Status](https://github.com/ImKairat/rs_enums/actions/workflows/pytest.yml/badge.svg)](https://github.com/ImKairat/rs_enums/actions/workflows/pytest.yml)
+[![Contributing Guidelines](https://img.shields.io/badge/Contributing-Guidelines-blue)](CONTRIBUTING.md)
+
 
 
 
