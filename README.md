@@ -1,9 +1,10 @@
 # rs_enums
 
+![Version](https://img.shields.io/github/v/release/ImKairat/rs_enums)
 [![Pylint Status](https://github.com/ImKairat/rs_enums/actions/workflows/pylint.yml/badge.svg)](https://github.com/ImKairat/rs_enums/actions/workflows/pylint.yml)
 [![Pytest Status](https://github.com/ImKairat/rs_enums/actions/workflows/pytest.yml/badge.svg)](https://github.com/ImKairat/rs_enums/actions/workflows/pytest.yml)
-![Version](https://img.shields.io/github/v/release/ImKairat/rs_enums)
 [![Contributing Guidelines](https://img.shields.io/badge/Contributing-Guidelines-blue)](CONTRIBUTING.md)
+
 
 
 
