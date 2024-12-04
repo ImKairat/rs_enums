@@ -2,10 +2,10 @@
 This module contains fixtures for testing the Option class from rs_enums.
 """
 import random
-import pytest_lazyfixture   # type: ignore
+import pytest   # type: ignore
 
 
-@pytest_lazyfixture.fixture
+@pytest.fixture
 def generate_random_data():
     """Generate list from 1000 random data of various types."""
     data_types = [

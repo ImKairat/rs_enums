@@ -3,7 +3,7 @@ This module contains tests for the Option class from rs_enums.
 """
 import os
 import sys
-import pytest_lazyfixture   # type: ignore
+import pytest   # type: ignore
 from rs_enums import Option
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
@@ -19,10 +19,10 @@ def test_new(generate_random_data):
     for i in generate_random_data:
         x = Option(i)
         if i is None:
-            with pytest_lazyfixture.raises(RuntimeError) as exc_info:
+            with pytest.raises(RuntimeError) as exc_info:
                 x.expect("Some error")
                 assert str(exc_info.value) == "Some error"
-            with pytest_lazyfixture.raises(RuntimeError) as exc_info:
+            with pytest.raises(RuntimeError) as exc_info:
                 x.unwrap()
                 assert str(exc_info.value) == ""
         else:
