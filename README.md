@@ -39,3 +39,7 @@ if result.is_ok():
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
+
+## Contributing
+
+We welcome contributions! Please see our [CONTRIBUTING.md](./CONTRIBUTING.md) for guidelines on how to contribute to this project.
