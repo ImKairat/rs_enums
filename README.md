@@ -5,10 +5,8 @@
 [![Pytest Status](https://github.com/ImKairat/rs_enums/actions/workflows/pytest.yml/badge.svg)](https://github.com/ImKairat/rs_enums/actions/workflows/pytest.yml)
 [![Contributing Guidelines](https://img.shields.io/badge/Contributing-Guidelines-blue)](CONTRIBUTING.md)
 
+`rs_enums` is a Python module inspired by Rust’s `Option` and `Result` enums. It provides functional programming constructs for handling optional values (`Option`) and results (`Result`) with success or error outcomes. This module enables safer and more expressive code by allowing you to work with values that may or may not exist, or operations that may succeed or fail.
 
-
-
-`rs_enums` is a Python module inspired by Rust’s `Option` and `Result` enums. It provides functional programming constructs for handling optional values (`Option`) and results (`Result`) with success or error outcomes. This module enables safer and more expressive code by allowing you to work with values that may or may not exist, or operations that may succeed or fail. 
 ### Features include:
 - **`Option`**: Represents a value that may or may not be present (`Some` or `None`).
 - **`Result`**: Represents an operation that can either succeed (`Ok`) or fail (`Err`).
@@ -25,17 +23,17 @@ pip install rs_enums
 ## Usage Example
 
 ```python
-from rs_enums import Optional, Result
+from rs_enums.option import Option
 
-# Example of Optional
-opt = Optional(42)
+# Example of Option
+opt = Option(42)
 if opt.is_some():
     print(opt.unwrap())  # Output: 42
 
-# Example of Result
-result = Result(value="Success")
-if result.is_ok():
-    print(result.unwrap())  # Output: Success
+# Example of Result (assuming Result is implemented similarly)
+# result = Result(value="Success")
+# if result.is_ok():
+#     print(result.unwrap())  # Output: Success
 ```
 
 ## License
