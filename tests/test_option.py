@@ -13,26 +13,36 @@ class TestOption:
 
     def test_option_creation_with_various_inputs(self, generate_random_data):
         """Verify that the class correctly handles None values and unwraps the expected values."""
-        option_instance = Option(generate_random_data)
-        if generate_random_data is None:
-            with pytest.raises(RuntimeError) as exc_info:
-                option_instance.expect("Some error")
-            assert str(exc_info.value) == "Some error"
-            with pytest.raises(RuntimeError) as exc_info:
-                option_instance.unwrap()
-            assert str(exc_info.value) == "Value is None"
-        else:
-            assert option_instance.expect("Some error") == generate_random_data
-            assert option_instance.unwrap() == generate_random_data
-        assert option_instance.is_none() == (generate_random_data is None)
-        assert option_instance.is_some() == (generate_random_data is not None)
+        for value in generate_random_data:
+            option_instance = Option(value)
+            if value is None:
+                with pytest.raises(RuntimeError) as exc_info:
+                    option_instance.expect("Some error")
+                assert str(exc_info.value) == "Some error"
+                with pytest.raises(RuntimeError) as exc_info:
+                    option_instance.unwrap()
+                assert str(exc_info.value) == "Value is None"
+            else:
+                assert option_instance.expect("Some error") == value
+                assert option_instance.unwrap() == value
+                assert option_instance.is_none() == (value is None)
+                assert option_instance.is_some() == (value is not None)
 
     def test_option_with_different_types(self, generate_random_data):
         """Test with different types of values."""
-        option_instance = Option(generate_random_data[0])
-        assert option_instance.is_some() is True
-        assert option_instance.unwrap() == generate_random_data[0]
-        assert option_instance.expect("Should not be None") == generate_random_data[0]
+        for value in generate_random_data:
+            option_instance = Option(value)
+            assert option_instance.is_some() == (value is not None)
+            if value is None:
+                with pytest.raises(RuntimeError) as exc_info:
+                    option_instance.unwrap()
+                assert str(exc_info.value) == "Value is None"
+                with pytest.raises(RuntimeError) as exc_info:
+                    option_instance.expect("Should not be None")
+                assert str(exc_info.value) == "Should not be None"
+            else:
+                assert option_instance.unwrap() == value
+                assert option_instance.expect("Should not be None") == value
 
     def test_option_with_large_number(self):
         """Test with a large number."""
