@@ -4,8 +4,8 @@ This module contains tests for the Option class from rs_enums.
 import os
 import sys
 import pytest   # type: ignore
-from rs_enums import Option
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from rs_enums import Option  # pylint: disable=C0413
 
 
 class TestOption:
