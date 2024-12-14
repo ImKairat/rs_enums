@@ -2,6 +2,7 @@
 This module provides an implementation of the Option type, which represents 
 an optional value that can be either present (Some) or absent (None).
 """
+# pylint: disable=W0231
 
 from typing import Generic, Optional
 from .generics import T

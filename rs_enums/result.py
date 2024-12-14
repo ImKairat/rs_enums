@@ -2,6 +2,7 @@
 This module provides a current implementation of the Result type, which represents 
 a value that can be either successful (Ok) or erroneous (Err).
 """
+# pylint: disable=W0231
 
 from typing import Generic, Union
 from .generics import T, E
@@ -52,7 +53,7 @@ class Ok(Result[T, E]):
     """
     def __init__(self, value: T) -> None:
         self.value = value  # Directly assign the value without calling Result's __init__
-    
+
     def __repr__(self) -> str:
         """Return a string representation of the Ok instance."""
         return f"Ok({self.value})"
