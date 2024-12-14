@@ -20,20 +20,44 @@ Install via `pip`:
 pip install rs_enums
 ```
 
+## Result and Option Types
+
+### `Option`
+The `Option` type represents an optional value that can either be present (`Some`) or absent (`None`). It provides methods to safely handle values that may not exist.
+
+#### Features:
+- **`Some`**: Represents a value that is present.
+- **`is_some()`**: Checks if the value is present.
+- **`is_none()`**: Checks if the value is absent.
+- **`unwrap()`**: Returns the value if present; raises an error if absent.
+- **`expect(message)`**: Returns the value if present; raises an error with a custom message if absent.
+
+### `Result`
+The `Result` type represents a value that can either be successful (`Ok`) or erroneous (`Err`). It is useful for handling operations that may succeed or fail.
+
+#### Features:
+- **`Ok`**: Represents a successful value.
+- **`Err`**: Represents an error value.
+- **`is_ok()`**: Checks if the result is successful.
+- **`is_err()`**: Checks if the result is erroneous.
+- **`unwrap()`**: Returns the successful value if present; raises an error if erroneous.
+- **`expect(message)`**: Returns the successful value if present; raises an error with a custom message if erroneous.
+
 ## Usage Example
 
 ```python
 from rs_enums.option import Option
+from rs_enums.result import Result
 
 # Example of Option
 opt = Option(42)
 if opt.is_some():
     print(opt.unwrap())  # Output: 42
 
-# Example of Result (assuming Result is implemented similarly)
-# result = Result(value="Success")
-# if result.is_ok():
-#     print(result.unwrap())  # Output: Success
+# Example of Result
+result = Result.new(value="Success")
+if result.is_ok():
+    print(result.unwrap())  # Output: Success
 ```
 
 ## License
