@@ -3,4 +3,4 @@
    ignored-modules=pytest
 
    [MESSAGES CONTROL]
-   disable=import-error
+   disable=import-error, F0010
