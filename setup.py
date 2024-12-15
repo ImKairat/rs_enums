@@ -5,8 +5,8 @@ This module uses setuptools to package the application.
 from setuptools import setup, find_packages
 
 setup(
-    name="my_package",
-    version="0.1.0",
+    name="rs_enums",
+    version="0.1.0-beta",
     packages=find_packages(),
     install_requires=[
     ],
