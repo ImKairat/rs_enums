@@ -1,6 +1,6 @@
 # rs_enums
 
-![Version](https://img.shields.io/github/v/release/ImKairat/rs_enums)
+![Version](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/ImKairat/rs_enums/gh-pages/version.json)
 [![Pylint Status](https://github.com/ImKairat/rs_enums/actions/workflows/pylint.yml/badge.svg)](https://github.com/ImKairat/rs_enums/actions/workflows/pylint.yml)
 [![Pytest Status](https://github.com/ImKairat/rs_enums/actions/workflows/pytest.yml/badge.svg)](https://github.com/ImKairat/rs_enums/actions/workflows/pytest.yml)
 [![Contributing Guidelines](https://img.shields.io/badge/Contributing-Guidelines-blue)](CONTRIBUTING.md)
