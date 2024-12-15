@@ -1,0 +1,28 @@
+name: Update Version on Release
+
+on:
+  release:
+    types:
+      - published
+      - prereleased
+
+jobs:
+  update_version:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Get the latest release version
+        id: get_version
+        run: echo "VERSION=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
+
+      - name: Write version to file
+        run: echo $VERSION > version.txt
+
+      - name: Commit and push version file
+        uses: EndBug/add-and-commit@v7
+        with:
+          author_name: 'GitHub Actions'
+          author_email: 'actions@github.com'
+          message: 'Update version file with release version'
