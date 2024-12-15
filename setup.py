@@ -6,7 +6,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="rs_enums",
-    version="0.1.1-beta",
+    version="0.1.2-beta",
     packages=find_packages(),
     install_requires=[
     ],
