@@ -1,0 +1,38 @@
+name: Update Version Badge
+
+on:
+  release:
+    types:
+      - published
+      - prereleased
+
+jobs:
+  update_badge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Get the latest release version
+        id: get_version
+        run: echo "VERSION=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
+
+      - name: Generate version.json for the badge
+        run: |
+          echo '{ "schemaVersion": 1, "label": "version", "message": "'"$VERSION"'", "color": "blue" }' > version.json
+
+      - name: Commit and push version.json
+        uses: EndBug/add-and-commit@v7
+        with:
+          author_name: 'GitHub Actions'
+          author_email: 'actions@github.com'
+          message: 'Update version badge with release version'
+          add: 'version.json'
+
+      - name: Push to GitHub Pages branch
+        run: |
+          git fetch origin
+          git checkout -B gh-pages
+          git add version.json
+          git commit -m "Update version.json for badge"
+          git push origin gh-pages
