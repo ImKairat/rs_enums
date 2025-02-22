@@ -1,22 +1,22 @@
-[tool.poetry]
+[project]
 name = "rs-enums"
 version = "0.1.2-beta"
 description = "rs_enums is a Python module inspired by Rust's powerful Option and Result enums."
-authors = ["Kubanychbek uulu Kairat <kubanychbekukairat@gmail.com>"]
 license = "Apache-2.0"
 readme = "README.md"
+requires-python = ">=3.11"
+dependencies = []
 
-[tool.poetry.dependencies]
-python = "^3.11"
-pytest = "^8.3.0"
+[dependency-groups]
+dev = [
+    "setuptools>=75.8.0",
+    "twine>=6.1.0",
+    "wheel>=0.45.1",
+]
+test = [
+    "mypy>=1.15.0",
+    "pytest>=8.3.4",
+]
 
-[tool.poetry.group.dev.dependencies]
-pytest = "^8.3.4"
-pylint = "^3.3.2"
-setuptools = "^75.6.0"
-wheel = "^0.45.1"
-twine = "^6.0.1"
-
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+[tool.mypy]
+strict = true

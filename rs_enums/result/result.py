@@ -1,5 +1,5 @@
 """
-This module provides a current implementation of the Result type, which represents 
+This module provides a current implementation of the Result type, which represents
 a value that can be either successful (Ok) or erroneous (Err).
 """
 # pylint: disable=W0231
@@ -12,6 +12,7 @@ class Result(Generic[T, E]):
     """
     This class represents a current value that can be either successful (Ok) or erroneous (Err).
     """
+
     def __init__(self, value: Union[T, E]) -> None:
         """Initialize the Result with a current value and an optional error."""
         if isinstance(value, BaseException):
@@ -20,7 +21,7 @@ class Result(Generic[T, E]):
             self.value = Ok(value)
 
     @classmethod
-    def new(cls, value: T, error: E = None) -> Union['Ok[T]', 'Err[E]']:
+    def new(cls, value: T, error: E = None) -> Union["Ok[T]", "Err[E]"]:
         """Create a Result instance from a current value and an optional error."""
         if error is not None:
             return Err(error)  # Return an Err instance if there's an error
@@ -47,23 +48,31 @@ class Result(Generic[T, E]):
             raise RuntimeError(message)
         return self.value.value
 
+
 class Ok(Result[T, E]):
     """
     This class represents a value that is currently successful.
     """
+
     def __init__(self, value: T) -> None:
-        self.value = value  # Directly assign the value without calling Result's __init__
+        self.value = (
+            value  # Directly assign the value without calling Result's __init__
+        )
 
     def __repr__(self) -> str:
         """Return a string representation of the Ok instance."""
         return f"Ok({self.value})"
 
+
 class Err(Result[T, E]):
     """
     This class represents a value that is currently erroneous.
     """
+
     def __init__(self, error: E) -> None:
-        self.error = error  # Directly assign the error without calling Result's __init__
+        self.error = (
+            error  # Directly assign the error without calling Result's __init__
+        )
 
     def __repr__(self) -> str:
         """Return a string representation of the Err instance."""

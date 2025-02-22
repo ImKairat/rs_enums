@@ -1,17 +1,18 @@
 """
-This module provides an implementation of the Option type, which represents 
+This module provides an implementation of the Option type, which represents
 an optional value that can be either present (Some) or absent (None).
 """
 # pylint: disable=W0231
 
 from typing import Generic, Optional
-from .generics import T
+from ..generics import T
 
 
 class Some(Generic[T]):
     """
     This class represents a value that is present and can be used safely.
     """
+
     def __init__(self, value: T) -> None:
         self.value: T = value
 
@@ -26,15 +27,16 @@ class Some(Generic[T]):
 
 class Option(Generic[T]):
     """
-    This class represents an optional value that can be either present (Some) 
+    This class represents an optional value that can be either present (Some)
     or absent (None).
     """
+
     def __init__(self, value: Optional[T]) -> None:
         """Initialize the Option with a value, which can be Some or None."""
         self.value = Some(value) if value is not None else None
 
     @classmethod
-    def new(cls, value: Optional[T]) -> Optional['Option[T]']:
+    def new(cls, value: Optional[T]) -> Optional["Option[T]"]:
         """Create an Option instance from a value, returning None if the value is None."""
         return cls(Some(value) if value is not None else None)
 
