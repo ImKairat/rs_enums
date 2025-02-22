@@ -5,7 +5,7 @@ a value that can be either successful (Ok) or erroneous (Err).
 # pylint: disable=W0231
 
 from typing import Generic, Union
-from .generics import T, E
+from ..generics import T, E
 
 
 class Result(Generic[T, E]):

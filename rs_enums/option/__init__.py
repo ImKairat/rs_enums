@@ -1,4 +1,4 @@
-from option import Some, Option
+from .option import Some, Option
 
 __all__ = [
     "Option",
